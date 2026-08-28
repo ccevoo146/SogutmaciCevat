@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Randevular - Soğutmacı Cevat</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            background: #f4f9fc;
+
+            color: #102a43;
+        }
+
+
+        /* HEADER */
+
+        .header {
+
+            background: #102a43;
+
+            color: white;
+
+            padding: 22px 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .header h1 {
+
+            margin: 0;
+
+            font-size: 24px;
+        }
+
+        .header p {
+
+            margin: 5px 0 0;
+
+            color: #bcccdc;
+
+            font-size: 14px;
+        }
+
+        .header-buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+        .header a {
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 11px 16px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .home-button {
+
+            background: #087ea4;
+        }
+
+        .logout-button {
+
+            background: #c53030;
+        }
+
+
+        /* CONTENT */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1400px;
+
+            margin: 40px auto;
+        }
+
+
+        .page-title {
+
+            margin-bottom: 25px;
+        }
+
+        .page-title h2 {
+
+            margin: 0 0 6px;
+
+            font-size: 30px;
+        }
+
+        .page-title p {
+
+            margin: 0;
+
+            color: #627d98;
+        }
+
+
+        /* EMPTY */
+
+        .empty {
+
+            background: white;
+
+            padding: 50px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            border: 1px solid #e4edf3;
+        }
+
+
+        /* TABLE */
+
+        .table-wrapper {
+
+            background: white;
+
+            border-radius: 15px;
+
+            border: 1px solid #e4edf3;
+
+            overflow-x: auto;
+
+            box-shadow:
+                0 12px 35px
+                rgba(16, 42, 67, 0.06);
+        }
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 1100px;
+        }
+
+        th {
+
+            background: #eefaff;
+
+            color: #243b53;
+
+            text-align: left;
+
+            padding: 16px 14px;
+
+            font-size: 13px;
+
+            white-space: nowrap;
+        }
+
+        td {
+
+            padding: 16px 14px;
+
+            border-top: 1px solid #edf2f7;
+
+            vertical-align: top;
+
+            font-size: 14px;
+        }
+
+        tr:hover td {
+
+            background: #fbfdff;
+        }
+
+
+        /* CUSTOMER */
+
+        .customer-name {
+
+            font-weight: bold;
+
+            color: #102a43;
+        }
+
+        .phone {
+
+            color: #087ea4;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+        /* SERVICE */
+
+        .service {
+
+            display: inline-block;
+
+            padding: 7px 10px;
+
+            border-radius: 7px;
+
+            background: #e5f8fc;
+
+            color: #087ea4;
+
+            font-weight: bold;
+
+            font-size: 12px;
+        }
+
+
+        /* STATUS */
+
+        .status {
+
+            display: inline-block;
+
+            padding: 7px 12px;
+
+            border-radius: 50px;
+
+            background: #fff4cc;
+
+            color: #946200;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        /* ADDRESS */
+
+        .address {
+
+            max-width: 250px;
+
+            line-height: 1.5;
+
+            color: #486581;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #829ab1;
+
+            font-size: 13px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .header-buttons {
+
+                width: 100%;
+            }
+
+            .header a {
+
+                flex: 1;
+
+                text-align: center;
+            }
+
+            .container {
+
+                width: 94%;
+
+                margin: 25px auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div>
+
+        <h1>
+            ❄️ Soğutmacı Cevat
+        </h1>
+
+        <p>
+            Servis Yönetim Paneli
+        </p>
+
+    </div>
+
+
+    <div class="header-buttons">
+
+        <a
+            href="/"
+            class="home-button">
+
+            Ana Sayfa
+
+        </a>
+
+
+        <a
+            href="/admin/cikis"
+            class="logout-button">
+
+            Çıkış Yap
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <div class="page-title">
+
+        <h2>
+            Servis Randevuları
+        </h2>
+
+        <p>
+            Müşteriler tarafından gönderilen servis talepleri.
+        </p>
+
+    </div>
+
+
+    {% if randevular %}
+
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Müşteri
+                    </th>
+
+                    <th>
+                        Telefon
+                    </th>
+
+                    <th>
+                        İlçe
+                    </th>
+
+                    <th>
+                        Adres
+                    </th>
+
+                    <th>
+                        Hizmet
+                    </th>
+
+                    <th>
+                        Tarih
+                    </th>
+
+                    <th>
+                        Saat
+                    </th>
+
+                    <th>
+                        Açıklama
+                    </th>
+
+                    <th>
+                        Durum
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for randevu in randevular %}
+
+                <tr>
+
+
+                    <td>
+
+                        <div class="customer-name">
+
+                            {{ randevu[1] }}
+                            {{ randevu[2] }}
+
+                        </div>
+
+                    </td>
+
+
+                    <td>
+
+                        <a
+                            href="tel:{{ randevu[3] }}"
+                            class="phone">
+
+                            {{ randevu[3] }}
+
+                        </a>
+<a
+    href="https://wa.me/90{{ randevu[3][1:] }}"
+    target="_blank"
+    class="whatsapp">
+
+    💬 WhatsApp
+
+</a>
+
+                    </td>
+
+
+                    <td>
+
+                        {{ randevu[4] }}
+
+                    </td>
+
+
+                    <td>
+
+                        <div class="address">
+
+                            {{ randevu[5] }}
+
+                        </div>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="service">
+
+                            {{ randevu[6] }}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        {{ randevu[7] }}
+
+                    </td>
+
+
+                    <td>
+
+                        {{ randevu[8] }}
+
+                    </td>
+
+
+                    <td>
+
+                        {{ randevu[9] }}
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="status">
+
+                            🟡 Yeni
+
+                        </span>
+
+                    </td>
+
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    {% else %}
+
+
+    <div class="empty">
+
+        <h3>
+            Henüz randevu yok
+        </h3>
+
+        <p>
+            Müşteriler randevu oluşturduğunda
+            burada görünecek.
+        </p>
+
+    </div>
+
+
+    {% endif %}
+
+
+</main>
+
+
+<footer>
+
+    Soğutmacı Cevat © 2026
+
+</footer>
+
+
+</body>
+
+</html>

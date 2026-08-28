@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soğutmacı Cevat | İstanbul Beyaz Eşya & Klima Servisi</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- ÜST MENÜ -->
+    <header class="navbar">
+       <a href="/" class="logo">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Soğutmacı Cevat">
+    <span>Soğutmacı Cevat</span>
+</a>
+
+        <nav>
+            <a href="#hizmetler">Hizmetler</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#iletisim">İletişim</a>
+            <a href="tel:+905364362786" class="nav-phone">
+            📞 0536 436 27 86
+            </a>
+<a
+    href="https://wa.me/905364362786"
+    class="whatsapp-button"
+    target="_blank">
+    WhatsApp
+</a>
+            <a href="#randevu" class="nav-button">Randevu Al</a>
+        </nav>
+    </header>
+
+
+    <!-- ANA BÖLÜM -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🔧 İstanbul İçi Servis
+            </div>
+
+            <h1>
+                Beyaz Eşya ve Klima
+                <span>Servis Hizmeti</span>
+            </h1>
+
+            <p>
+                Buzdolabı, klima ve çamaşır makinesi servis hizmetleri.
+                İstanbul genelinde güvenilir ve hızlı servis.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="tel:05364362786" class="primary-button">
+                    📞 Hemen Ara
+                </a>
+
+                <a href="#randevu" class="secondary-button">
+                    📅 Randevu Oluştur
+                </a>
+            </div>
+
+            <div class="phone">
+                📱 0536 436 27 86
+            </div>
+
+        </div>
+
+<div class="hero-card logo-card">
+
+    <img
+        src="{{ url_for('static', filename='images/logo.png') }}"
+        alt="Soğutmacı Cevat">
+
+    <h3>Soğutmacı Cevat</h3>
+
+    <p>
+        Klima ve beyaz eşya servis ihtiyaçlarınız için
+        hızlı ve güvenilir hizmet.
+    </p>
+
+</div>
+
+    </section>
+
+
+    <!-- HİZMETLER -->
+    <section id="hizmetler" class="services">
+
+        <div class="section-title">
+            <span>HİZMETLERİMİZ</span>
+            <h2>Size Nasıl Yardımcı Olabiliriz?</h2>
+            <p>
+                Beyaz eşya ve klima konusunda servis ihtiyaçlarınız için
+                hızlı ve pratik çözümler.
+            </p>
+        </div>
+
+
+<div class="service-grid">
+
+    <!-- BUZDOLABI -->
+    <div class="service-box">
+
+        <img
+            src="{{ url_for('static', filename='images/buzdolabi.jpg') }}"
+            alt="Buzdolabı Servisi">
+
+        <div class="service-box-content">
+
+            <h3>Buzdolabı Servisi</h3>
+
+            <p>
+                Buzdolabınızın soğutmama, ses yapma
+                ve diğer arızaları için servis hizmeti.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- KLİMA MONTAJI -->
+    <div class="service-box">
+
+        <img
+            src="{{ url_for('static', filename='images/klima-montaj.jpg') }}"
+            alt="Klima Montajı">
+
+        <div class="service-box-content">
+
+            <h3>Klima Montajı</h3>
+
+            <p>
+                Klimalarınız için profesyonel ve
+                güvenli montaj hizmeti.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- KLİMA SERVİSİ -->
+    <div class="service-box">
+
+        <img
+            src="{{ url_for('static', filename='images/klima-servisi.jpg') }}"
+            alt="Klima Servisi">
+
+        <div class="service-box-content">
+
+            <h3>Klima Servisi</h3>
+
+            <p>
+                Klima bakım, arıza ve performans
+                sorunları için servis hizmeti.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ÇAMAŞIR MAKİNESİ -->
+    <div class="service-box">
+
+        <img
+            src="{{ url_for('static', filename='images/camasir-makinesi.jpg') }}"
+            alt="Çamaşır Makinesi Servisi">
+
+        <div class="service-box-content">
+
+            <h3>Çamaşır Makinesi Servisi</h3>
+
+            <p>
+                Çamaşır makinesi arızaları için
+                hızlı ve güvenilir servis hizmeti.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+    </section>
+
+
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda" class="about">
+
+        <div class="about-content">
+
+            <span>SOĞUTMACI CEVAT</span>
+
+            <h2>
+                İstanbul'da Güvenilir
+                Servis Hizmeti
+            </h2>
+
+            <p>
+                Klima ve beyaz eşya servis ihtiyaçlarınız için
+                İstanbul genelinde hizmet veriyoruz.
+            </p>
+
+            <p>
+                Amacımız arızalarınıza hızlı ve pratik çözümler
+                sunarak müşterilerimizin memnuniyetini sağlamaktır.
+            </p>
+
+            <a href="#randevu" class="primary-button">
+                Servis Talebi Oluştur
+            </a>
+
+        </div>
+
+    </section>
+<!-- NEDEN BİZ -->
+<section class="why-us">
+
+    <div class="section-title">
+
+        <span>NEDEN SOĞUTMACI CEVAT?</span>
+
+        <h2>
+            Servis ihtiyacınızda
+            yanınızdayız
+        </h2>
+
+        <p>
+            İstanbul genelinde klima, buzdolabı ve
+            çamaşır makinesi servis hizmetleri.
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                ✓
+            </div>
+
+            <h3>Hızlı Servis</h3>
+
+            <p>
+                Servis taleplerinize mümkün olan
+                en kısa sürede dönüş yapıyoruz.
+            </p>
+
+        </div>
+
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                ✓
+            </div>
+
+            <h3>Güvenilir Hizmet</h3>
+
+            <p>
+                Cihazınızın sorununu tespit ederek
+                çözüm odaklı servis sunuyoruz.
+            </p>
+
+        </div>
+
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                ✓
+            </div>
+
+            <h3>İstanbul İçi Hizmet</h3>
+
+            <p>
+                İstanbul'un birçok bölgesine
+                servis hizmeti sağlıyoruz.
+            </p>
+
+        </div>
+
+
+        <div class="why-box">
+
+            <div class="why-icon">
+                ✓
+            </div>
+
+            <h3>Kolay Randevu</h3>
+
+            <p>
+                İnternet üzerinden kolayca servis
+                talebi oluşturabilirsiniz.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RANDEVU -->
+<section id="randevu" class="appointment">
+
+    <div class="section-title">
+
+        <span>RANDEVU</span>
+
+        <h2>Servis Randevusu Oluşturun</h2>
+
+        <p>
+            Bilgilerinizi bırakın, size en kısa sürede dönüş yapalım.
+        </p>
+
+    </div>
+
+
+    <div class="appointment-box">
+
+        <form action="/randevu" method="POST">
+
+
+            <!-- AD SOYAD -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Ad</label>
+
+                    <input
+                        type="text"
+                        name="ad"
+                        placeholder="Adınız"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Soyad</label>
+
+                    <input
+                        type="text"
+                        name="soyad"
+                        placeholder="Soyadınız"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <!-- TELEFON -->
+
+            <div class="form-group">
+
+                <label>Telefon</label>
+
+                <input
+                    type="tel"
+                    name="telefon"
+                    placeholder="05XX XXX XX XX"
+                    required>
+
+            </div>
+
+
+            <!-- İLÇE -->
+
+            <div class="form-group">
+
+                <label>İlçe</label>
+
+                <select name="ilce" required>
+
+                    <option value="">
+                        İlçe seçiniz
+                    </option>
+
+                    <option>Arnavutköy</option>
+                    <option>Avcılar</option>
+                    <option>Bağcılar</option>
+                    <option>Bahçelievler</option>
+                    <option>Bakırköy</option>
+                    <option>Başakşehir</option>
+                    <option>Bayrampaşa</option>
+                    <option>Beşiktaş</option>
+                    <option>Beykoz</option>
+                    <option>Beylikdüzü</option>
+                    <option>Beyoğlu</option>
+                    <option>Büyükçekmece</option>
+                    <option>Çatalca</option>
+                    <option>Çekmeköy</option>
+                    <option>Esenler</option>
+                    <option>Esenyurt</option>
+                    <option>Eyüpsultan</option>
+                    <option>Fatih</option>
+                    <option>Gaziosmanpaşa</option>
+                    <option>Güngören</option>
+                    <option>Kadıköy</option>
+                    <option>Kağıthane</option>
+                    <option>Kartal</option>
+                    <option>Küçükçekmece</option>
+                    <option>Maltepe</option>
+                    <option>Pendik</option>
+                    <option>Sancaktepe</option>
+                    <option>Sarıyer</option>
+                    <option>Silivri</option>
+                    <option>Sultanbeyli</option>
+                    <option>Sultangazi</option>
+                    <option>Şile</option>
+                    <option>Şişli</option>
+                    <option>Tuzla</option>
+                    <option>Ümraniye</option>
+                    <option>Üsküdar</option>
+                    <option>Zeytinburnu</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ADRES -->
+
+            <div class="form-group">
+
+                <label>Açık Adres</label>
+
+                <textarea
+                    name="adres"
+                    placeholder="Mahalle, sokak, bina ve daire bilgilerinizi yazın"
+                    required></textarea>
+
+            </div>
+
+
+            <!-- HİZMET -->
+
+            <div class="form-group">
+
+                <label>Servis Türü</label>
+
+                <select name="hizmet" required>
+
+                    <option value="">
+                        Hizmet seçiniz
+                    </option>
+
+                    <option value="Buzdolabı Servisi">
+                        Buzdolabı Servisi
+                    </option>
+
+                    <option value="Klima Montajı">
+                        Klima Montajı
+                    </option>
+
+                    <option value="Klima Servisi">
+                        Klima Servisi
+                    </option>
+
+                    <option value="Çamaşır Makinesi Servisi">
+                        Çamaşır Makinesi Servisi
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TARİH VE SAAT -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Tercih Edilen Tarih</label>
+
+                    <input
+                        type="date"
+                        name="tarih"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Tercih Edilen Saat</label>
+
+                    <select name="saat" required>
+
+                        <option value="">
+                            Saat seçiniz
+                        </option>
+
+                        <option>09:00 - 11:00</option>
+                        <option>11:00 - 13:00</option>
+                        <option>13:00 - 15:00</option>
+                        <option>15:00 - 17:00</option>
+                        <option>17:00 - 19:00</option>
+                        <option>19:00 - 21:00</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- AÇIKLAMA -->
+
+            <div class="form-group">
+
+                <label>Arıza / Açıklama</label>
+
+                <textarea
+                    name="aciklama"
+                    placeholder="Cihazdaki problemi kısaca açıklayın"
+                    required></textarea>
+
+            </div>
+
+
+            <!-- GÖNDER -->
+
+            <button
+                type="submit"
+                class="submit-button">
+
+                📅 Randevu Talebi Gönder
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+    <!-- İLETİŞİM -->
+    <section id="iletisim" class="contact">
+
+        <h2>Servis İçin Bize Ulaşın</h2>
+
+        <p>
+            İstanbul içi servis talepleriniz için
+            hemen iletişime geçebilirsiniz.
+        </p>
+
+        <a href="tel:05364362786" class="primary-button">
+            📞 0536 436 27 86
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            <strong>❄ Soğutmacı Cevat</strong>
+        </div>
+
+        <p>
+            İstanbul İçi Beyaz Eşya & Klima Servisi
+        </p>
+
+        <p>
+            © 2026 Soğutmacı Cevat
+        </p>
+
+    </footer>
+
+</body>
+</html>
