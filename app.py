@@ -2,12 +2,15 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 
 app = Flask(__name__)
-veritabani_olustur()
-# ADMIN ŞİFRESİ
-app.secret_key = "sogutmaci-cevat-gizli-anahtar"
 
+# ADMIN AYARLARI
+app.secret_key = "sogutmaci-cevat-gizli-anahtar"
 ADMIN_SIFRE = "Cevat1234"
 
+
+# ==============================
+# VERİTABANI
+# ==============================
 
 def veritabani_olustur():
 
@@ -16,37 +19,40 @@ def veritabani_olustur():
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS randevular (
-
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-
             ad TEXT NOT NULL,
-
             soyad TEXT NOT NULL,
-
             telefon TEXT NOT NULL,
-
             ilce TEXT NOT NULL,
-
             adres TEXT NOT NULL,
-
             hizmet TEXT NOT NULL,
-
             tarih TEXT NOT NULL,
-
             saat TEXT NOT NULL,
-
             aciklama TEXT
-
         )
     """)
 
     conn.commit()
-
     conn.close()
+
+
+# Uygulama başlarken veritabanını oluştur
+veritabani_olustur()
+
+
+# ==============================
+# ANA SAYFA
+# ==============================
 
 @app.route("/")
 def home():
+
     return render_template("index.html")
+
+
+# ==============================
+# ADMIN GİRİŞ
+# ==============================
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin():
@@ -68,6 +74,10 @@ def admin():
 
     return render_template("login.html")
 
+
+# ==============================
+# ADMIN PANEL
+# ==============================
 
 @app.route("/admin/panel")
 def admin_panel():
@@ -105,12 +115,21 @@ def admin_panel():
     )
 
 
+# ==============================
+# ADMIN ÇIKIŞ
+# ==============================
+
 @app.route("/admin/cikis")
 def admin_cikis():
 
     session.pop("admin_giris", None)
 
     return redirect(url_for("admin"))
+
+
+# ==============================
+# RANDEVU
+# ==============================
 
 @app.route("/randevu", methods=["POST"])
 def randevu():
@@ -130,7 +149,17 @@ def randevu():
 
     cursor.execute("""
         INSERT INTO randevular
-        (ad, soyad, telefon, ilce, adres, hizmet, tarih, saat, aciklama)
+        (
+            ad,
+            soyad,
+            telefon,
+            ilce,
+            adres,
+            hizmet,
+            tarih,
+            saat,
+            aciklama
+        )
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         ad,
@@ -149,10 +178,13 @@ def randevu():
 
     return """
     <!DOCTYPE html>
+
     <html lang="tr">
 
     <head>
+
         <meta charset="UTF-8">
+
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0">
 
@@ -259,13 +291,15 @@ def randevu():
     """
 
 
+# ==============================
+# LOCAL ÇALIŞTIRMA
+# ==============================
+
 if __name__ == "__main__":
 
-    veritabani_olustur()
-
-app.run(
-    host="0.0.0.0",
-    port=5000,
-    debug=True,
-    use_reloader=False
-)
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True,
+        use_reloader=False
+    )
