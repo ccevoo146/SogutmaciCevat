@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
+import os
+import requests
 
 app = Flask(__name__)
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # ADMIN AYARLARI
 app.secret_key = "sogutmaci-cevat-gizli-anahtar"
@@ -175,6 +179,33 @@ def randevu():
 
     conn.commit()
     conn.close()
+    mesaj = f"""
+🔔 YENİ RANDEVU GELDİ!
+
+👤 Müşteri: {ad} {soyad}
+📞 Telefon: {telefon}
+
+📍 İlçe: {ilce}
+🏠 Adres: {adres}
+
+🔧 Hizmet: {hizmet}
+
+📅 Tarih: {tarih}
+⏰ Saat: {saat}
+
+📝 Açıklama:
+{aciklama}
+"""
+
+    telegram_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+
+    requests.post(
+        telegram_url,
+        data={
+            "chat_id": TELEGRAM_CHAT_ID,
+            "text": mesaj
+        }
+    )
 
     return """
     <!DOCTYPE html>
