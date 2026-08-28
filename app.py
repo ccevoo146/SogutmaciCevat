@@ -206,6 +206,8 @@ def randevu():
             "text": mesaj
         }
     )
+   print("TELEGRAM DURUM:", response.status_code)
+    print("TELEGRAM CEVAP:", response.text)
 
     return """
     <!DOCTYPE html>
