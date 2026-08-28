@@ -179,6 +179,7 @@ def randevu():
 
     conn.commit()
     conn.close()
+
     mesaj = f"""
 🔔 YENİ RANDEVU GELDİ!
 
@@ -199,14 +200,15 @@ def randevu():
 
     telegram_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
 
-    requests.post(
+    response = requests.post(
         telegram_url,
         data={
             "chat_id": TELEGRAM_CHAT_ID,
             "text": mesaj
         }
     )
-   print("TELEGRAM DURUM:", response.status_code)
+
+    print("TELEGRAM DURUM:", response.status_code)
     print("TELEGRAM CEVAP:", response.text)
 
     return """
