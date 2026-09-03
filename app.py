@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, Response
 import sqlite3
 import os
 import requests
@@ -53,6 +53,22 @@ def home():
 
     return render_template("index.html")
 
+@app.route("/robots.txt")
+def robots():
+    return """User-agent: *
+Allow: /
+Sitemap: https://sogutmaci-cevat.onrender.com/sitemap.xml
+"""
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://sogutmaci-cevat.onrender.com/</loc>
+    </url>
+</urlset>
+""", 200, {"Content-Type": "application/xml"}
 
 # ==============================
 # ADMIN GİRİŞ
