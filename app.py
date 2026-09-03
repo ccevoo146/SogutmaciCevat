@@ -53,7 +53,12 @@ def home():
 
     return render_template("index.html")
 
-
+@app.route("/robots.txt")
+def robots():
+    return """User-agent: *
+Allow: /
+Sitemap: https://sogutmaci-cevat.onrender.com/sitemap.xml
+""", 200, {"Content-Type": "text/plain; charset=utf-8"}
 """
 
 @app.route("/sitemap.xml")
