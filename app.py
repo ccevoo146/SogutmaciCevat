@@ -55,9 +55,11 @@ def home():
 
 @app.route("/robots.txt")
 def robots():
-    return """User-agent: *
-Allow: /
-Sitemap: https://sogutmaci-cevat.onrender.com/sitemap.xml
+    return (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Sitemap: https://sogutmaci-cevat.onrender.com/sitemap.xml\n"
+    ), 200, {"Content-Type": "text/plain"}
 """
 
 @app.route("/sitemap.xml")
